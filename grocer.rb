@@ -18,10 +18,10 @@ end
 def apply_coupons(cart, coupons)
   # code here
   coupons.each do |promo|
-    coupon_name = promo[:item]
-    coupon_name_num = promo[:num]
-    cart_item = cart[coupon_name]
-    
+    if cart.key?(promo[:item])
+      promo_count = 0
+      until coupon_name_num > cart_item[:count]
+        cart[]
 
 
 
