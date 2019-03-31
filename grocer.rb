@@ -7,7 +7,8 @@ def consolidate_cart(cart)
       new_cart[key] = value
     end
   end
-  new_cart
+  new_cart = {}
+  
 end
 
 def apply_coupons(cart, coupons)
