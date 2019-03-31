@@ -1,13 +1,17 @@
 def consolidate_cart(cart)
   # code here
-  new_cart = {}
-  cart.each do |item|
-    item.each do |key, value|
-      value[:count] = cart.count(item)
-      new_cart[key] = value
+  coupons.each do |coupon|
+    if cart.has_key?(coupon[:item]) && cart[coupon[:item]][:count] >= coupon[:num]
+      item_withcoupon = coupon[:item] + " W/COUPON"
+      if cart.has_key?(item_withcoupon)
+        cart[item_withcoupon][:count] += 1
+      else
+        cart[item_withcoupon] = {price: coupon[:cost], clearance: cart[coupon[:item]][:clearance], count: 1}
+      end
+      cart[coupon[:item]][:count] -= coupon[:num]
     end
   end
-  new_cart
+  cart
 end
   
   
