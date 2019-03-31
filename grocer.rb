@@ -8,7 +8,8 @@ def consolidate_cart(cart)
     end
   end
   new_cart = {}
-  
+  coupons.each do |promo|
+    if cart.has_key?(promo[:item]) && cart[promo[:item]][:count] >= promo[:num]
 end
 
 def apply_coupons(cart, coupons)
