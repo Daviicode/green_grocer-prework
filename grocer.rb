@@ -65,5 +65,9 @@ end
 
 def checkout(cart, coupons)
   # code here
-  
+  art = consolidate_cart(cart: cart)
+  cart = apply_coupons(cart: cart, coupons: coupons)
+  cart = apply_clearance(cart: cart)
+  final = nil
+
 end
