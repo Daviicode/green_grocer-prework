@@ -7,7 +7,6 @@ def consolidate_cart(cart)
       new_cart[key] = value
     end
   end
-end
   new_cart
 end
   
@@ -26,7 +25,6 @@ def apply_coupons(cart, coupons)
   end
 end
 cart
-end
 end
 
 def apply_clearance(cart)
