@@ -10,6 +10,10 @@ def consolidate_cart(cart)
   new_cart = {}
   coupons.each do |promo|
     if cart.has_key?(promo[:item]) && cart[promo[:item]][:count] >= promo[:num]
+      promo_key = promo[:item] + "W/COUPON"
+      if cart.has_key?(promo_key)
+        cart[promo_key][:count] += 1 
+      else cart[promo_key] = {price: promo[:cost], clearance: cart[promo[:item]][:clearance],
 end
 
 def apply_coupons(cart, coupons)
