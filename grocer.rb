@@ -7,6 +7,7 @@ def consolidate_cart(cart)
       new_cart[key] = value
     end
   end
+end
   new_cart
 end
   
