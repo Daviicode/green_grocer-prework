@@ -17,11 +17,18 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
+  applied_coupon = {}
   coupons.each do |promo|
     if cart.key?(promo[:item])
       promo_count = 0
-      until coupon_name_num > cart_item[:count]
-        cart[]
+      until promo[:num] > cart[promo[:count]][:count]
+        cart[promo[:item]][:count] -= promo[:num]
+        cart["#{promo[:itme]} W/COUPON"] = {pricce: promo[:cost], clearance: cart[promo[:item]][:clearance], count: promo_count + 1}
+      end
+    end
+  end
+  cart.merge(applied_coupon)
+end
 
 
 
